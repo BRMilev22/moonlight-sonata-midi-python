@@ -1,8 +1,31 @@
+<div align="center">
+
+<img src="assets/logo.png" alt="Moonlight Sonata" width="500"/>
+
 # Moonlight Sonata MIDI Player
 
-A Python command line application that encodes the opening bars of Ludwig van Beethoven's **Piano Sonata No. 14 in C# minor, Op. 27, No. 2** (popularly known as the "Moonlight Sonata") into a MIDI file and plays it back through your speakers. The entire musical score is defined purely in Python code using object oriented programming, and the program generates the MIDI file on the fly every time you hit play.
+**Beethoven's masterpiece, generated from pure Python code.**
 
-No pre recorded audio files are included. The music is built from scratch, note by note, every single time.
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![MIDI](https://img.shields.io/badge/MIDI-Powered-FF6B6B?style=for-the-badge&logo=audiomack&logoColor=white)](#what-is-midi-and-why-use-it)
+[![OOP](https://img.shields.io/badge/OOP-Architecture-7B68EE?style=for-the-badge&logo=abstract&logoColor=white)](#object-oriented-programming-principles)
+[![rich](https://img.shields.io/badge/CLI-Rich-00D4AA?style=for-the-badge&logo=windowsterminal&logoColor=white)](#technologies-and-libraries-used)
+
+A command line application that encodes the opening bars of **Piano Sonata No. 14 in C# minor, Op. 27, No. 2** into a MIDI file and plays it back through your speakers. The entire musical score is defined purely in Python using object oriented programming, and the program generates the MIDI file on the fly every time you hit play.
+
+No pre recorded audio files. The music is built from scratch, note by note, every single time.
+
+```
+        *    .        *       .        *
+   .        *    .        .       *
+      .           *    .     .        .
+
+    M O O N L I G H T   S O N A T A
+    Ludwig van Beethoven
+    Adagio sostenuto in C# minor
+```
+
+</div>
 
 <br>
 
@@ -125,26 +148,7 @@ pip install -r requirements.txt
 ./venv/bin/python3 main.py
 ```
 
-You will see a styled terminal interface with three options:
-
-```
-        *    .        *       .        *
-   .        *    .        .       *
-      .           *    .     .        .
-
-    M O O N L I G H T   S O N A T A
-    Ludwig van Beethoven
-    Adagio sostenuto in C# minor
-
-  ┌──── Menu ────┐
-  │ [1]  Play    │
-  │ [2]  Change  │
-  │      tempo   │
-  │ [3]  Exit    │
-  └──────────────┘
-
-  >
-```
+> **`[1]` Play** · **`[2]` Change tempo** · **`[3]` Exit**
 
 Press `1` to hear the first eight bars of the Moonlight Sonata. Press `2` to change the playback speed. Press `3` to exit.
 
@@ -155,14 +159,16 @@ Press `1` to hear the first eight bars of the Moonlight Sonata. Press `2` to cha
 ```
 moonlight-sonata-midi-python/
 │
-├── main.py               Entry point. CLI interface with rich.
-├── note.py               The Note class. Represents a single musical note.
-├── score.py              Abstract base class Score. Defines the contract.
-├── moonlight_sonata.py   MoonlightSonata class. The actual musical data.
-├── midi_builder.py       MidiBuilder class. Converts Score to a .mid file.
-├── player.py             MidiPlayer class. Plays .mid files with pygame.
-├── requirements.txt      Python dependencies (mido, pygame, rich).
-└── venv/                 Virtual environment (not committed to git).
+├── assets/
+│   └── logo.png              Project logo
+├── main.py                   Entry point. CLI interface with rich.
+├── note.py                   The Note class. Represents a single musical note.
+├── score.py                  Abstract base class Score. Defines the contract.
+├── moonlight_sonata.py       MoonlightSonata class. The actual musical data.
+├── midi_builder.py           MidiBuilder class. Converts Score to a .mid file.
+├── player.py                 MidiPlayer class. Plays .mid files with pygame.
+├── requirements.txt          Python dependencies (mido, pygame, rich).
+└── venv/                     Virtual environment (not committed to git).
 ```
 
 ### Why Is It Structured This Way?
@@ -683,3 +689,11 @@ Here are some ideas for extending the project:
 | **New pieces** | Create a new class like `FurElise(Score)` with its own `get_notes()`. The builder and player work automatically. |
 | **Save MIDI to file** | Add a menu option that saves the generated `.mid` to a user specified path instead of deleting it on exit. |
 | **Multiple instruments** | Use MIDI channels and program changes to add strings or other instruments alongside the piano. |
+
+<br>
+
+<div align="center">
+
+<sub>Built with Python, mido, pygame, and rich.</sub>
+
+</div>
